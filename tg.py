@@ -63,7 +63,10 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             response = await client.post(API_URL, json=payload)
             response.raise_for_status()
             api_response = response.json()
-            await update.message.reply_text(json.dumps(api_response, indent=2))
+            if api_response.get("status") == "SPAM":
+                await update.message.reply_text("SPAM")
+            else:
+                await update.message.reply_text("Not SPAM")
     except httpx.HTTPError as e:
         logger.error(f"Error sending message to API: {e}")
         await update.message.reply_text("Error sending message to API")
