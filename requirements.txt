@@ -1,2 +1,7 @@
-python-telegram-bot
+flask
+matplotlib
+numpy
+pandas[all]>=2.0.0
 python-dotenv
+python-telegram-bot
+scikit-learn
