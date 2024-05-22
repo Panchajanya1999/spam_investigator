@@ -1,7 +1,14 @@
+"""
+This is the main script that will execute the two scripts in parallel.
+"""
+
 import subprocess
 import time
 
 def execute_scripts():
+    """
+    Execute the two scripts in parallel
+    """
     # Start flask_spam_class.py in the background
     flask_process = subprocess.Popen(['python', 'flask_spam_class.py'])
     # Wait for 10 seconds
@@ -13,4 +20,3 @@ def execute_scripts():
 
 if __name__ == '__main__':
     execute_scripts()
-
