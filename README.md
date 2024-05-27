@@ -1,6 +1,6 @@
 # Spam Investigator
 
-This project includes scripts for running a Flask application (`flask_spam_class.py`) and a separate script (`tg.py`). The provided `run.py` script runs the Flask application in the background, waits for 10 seconds, and then runs `tg.py`.
+This project is a Spam Investigator that uses a machine learning model to classify messages from users in a Telegram groups as spam or not spam. The project is built using Python and the Flask web framework.
 
 ## Prerequisites
 
@@ -33,14 +33,19 @@ Before you begin, ensure you have the following software installed on your local
     cp sample.env .env
     ```
 
-2. Run the `run.py` file to start the Flask application and run `tg.py` after a 10-second delay:
+2. Build and start the Docker container:
 
     ```bash
-    python run.py
+    docker-compose up --build
+    ```
+
+3. Once started, you can stop the container with:
+
+    ```bash
+    docker-compose down
     ```
 
 ## File Structure
-
 
 - `README.md`: This file.
 - `requirements.txt`: Lists the Python packages required for the project.
@@ -67,4 +72,3 @@ If you wish to contribute to this project, please create a pull request or submi
 For any questions or concerns, please contact:
 
 - Panchajanya1999: [kernel@panchajanya.dev](mailto:kernel@panchajanya.dev)
-
